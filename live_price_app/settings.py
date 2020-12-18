@@ -14,7 +14,7 @@ SECRET_KEY = 't5ud=#g5+roqfb0-$u0ym)f)vsw#_5htj)+596vub&dk4!(ko^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://livepricetest.herokuapp.com/', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
