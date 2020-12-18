@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="searchbox">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2><b>
+			<centre>The smartest way to shop online is here, compare price on LIVE-PRICE!</centre>
+		</b></h2>
+	<br>
+	<form method="GET" action="/search/">
+		
+		<div class="form-group">
+			<input type="text" class="searchbar form-control" name="query" placeholder="Search Here..." name="InputItem">
+			<input type="submit" value="Search">
+
+			<!-- <label class="col-lg-2">
+				<button type="submit" class="btn btn-danger">Search</button>
+			</label> -->
+		</div>
+	</form>
+
+	<br>
+	<br>
+	
+	<div>
+		{% if messages %}
+		<ul class="messages">
+			{% for k in messages %}
+			<li style="color: crimson; list-style: none; font-size: 40px;">{{ k }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+	<br>
+	<div>
+		{% if sr%}
+		{%for k in sr%}
+		<table style=" padding:40px; justify-content: center;margin-left: 20%;
+		align-items: center; width:70%; color: black; background-color: white; border: 5px solid black; ">
+			<tr>
+				<th rowspan="10"><img src="{{k.product_img}}" style="height: 100px; width: 100px; padding-right:20px;"></th>
+				
+			</tr>
+					<tr>
+						<td style="width:30% ">Name :</td>
+						<td>{{k.product_name}}</td>
+					</tr>
+					<tr>
+						<td style="width:30%">Price :</td>
+						<td>{{k.product_price}}</td>
+					</tr>
+
+					<tr>
+						<td style="width:30%" ></td>
+						<td><button style=" background-color: black; 
+							border: 1px black;
+							border-radius: 3px;
+							color: white;
+							padding: 12px;
+							text-align: center;
+							text-decoration: none;
+							display: inline-block;
+							font-size: 16px;"><a href="{{k.product_url}}" target='_blank' style="text-decoration: none; color: white;">Buy Now from
+									{{k.product_seller}}</a></button></td>
+					</tr>
+			
+		</table>
+
+		<hr>
+		{% endfor %}
+		{% endif %}
+
+	</div>
+	<h2>
+		<centre>Search by Category</centre>
+	</h2>
+	<div class="hire">
+		<table class="table">
+			<tbody>
+				<tr>
+
+					<td>
+						<div class="hire-content">
+							<h2><i class="fas fa-laptop"><a href="#">Electronics</a></i></h2>
+						</div>
+					</td>
+					<td>
+						<div class="hire-content">
+							<h2><i class="fas fa-volleyball-ball"><a href="#"> Sports</a></i></h2>
+						</div>
+					</td>
+					<td>
+						<div class="hire-content ">
+							<h2><i class="fas fa-carrot"><a href="#"> Grocery</a></i></h2>
+						</div>
+					</td>
+					<td>
+					<td>
+						<div class="hire-content ">
+							<h2><i class="fas fa-tshirt"><a href="#"> Fashion</a></i></h2>
+						</div>
+					</td>
+					</td>
+					<td>
+						<div class="hire-content ">
+							<h2><i class="fas fa-chair"><a href=".#"> Furniture</a></i></h2>
+						</div>
+					</td>
+					<td>
+						<div class="hire-content ">
+							<h2><i class="fas fa-baby"><a href="#"> Toys & Baby</a></i></h2>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!--
+	<div class="Cate">
+	 <h2>Categories</h4>
+		<button class="avibutton"><a href="./base.html">Electronics</a></button>
+		<button class="avibutton"><a href="./base.html">Fashion</a></button>
+		<button class="avibutton"><a href="./base.html">Home & Furniture</a></button>
+		<button class="avibutton"><a href="./base.html">TV & Appliances</a></button><br>
+		<button class="avibutton"><a href="./base.html">Toys & Baby</a></button>
+		<button class="avibutton"><a href="./base.html">Beauty & Personal Care</a></button>
+		<button class="avibutton"><a href="./base.html"> Sports</a></button>
+		<button class="avibutton"><a href="./base.html">Grocery</a></button>
+	</div> -->
+</div>
+
+{% endblock content %}
